@@ -1,0 +1,34 @@
+---
+title: Intro Notebook
+toc: false
+theme: [air, alt,wide]
+---
+
+<script type="module" src="https://cdn.jsdelivr.net/npm/@marimo-team/islands@0.5.1/dist/main.js"></script>
+<link
+    href="https://cdn.jsdelivr.net/npm/@marimo-team/islands@0.5.1/dist/style.css"
+    rel="stylesheet"
+    crossorigin="anonymous"
+/>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+/>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&amp;family=Lora&amp;family=PT+Sans:wght@400;700&amp;display=swap" rel="stylesheet" />
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css"
+    integrity="sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww"
+    crossorigin="anonymous"
+/>
+
+```js
+const marimo_html = FileAttachment("data/marimo-intro-cli.html").html();
+```
+
+<div style="max-width:740px; margin: 0 auto;">
+  <div id="intro-notebook"> ${marimo_html.body} </div>
+</div>
+
