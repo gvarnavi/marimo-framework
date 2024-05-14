@@ -2,8 +2,8 @@
 
 import marimo
 
-__generated_with = "0.2.7"
-app = marimo.App()
+__generated_with = "0.5.2"
+app = marimo.App(width="medium")
 
 
 @app.cell

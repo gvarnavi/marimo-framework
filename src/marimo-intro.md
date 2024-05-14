@@ -25,10 +25,10 @@ theme: [air, alt,wide]
 />
 
 ```js
-const marimo_html = FileAttachment("data/marimo-intro-cli.html").html();
+const marimo_html = FileAttachment("data/marimo-intro-cli.html").text();
 ```
-
-<div style="max-width:740px; margin: 0 auto;">
-  <div id="intro-notebook"> ${marimo_html.body} </div>
-</div>
-
+```js
+const div = display(document.createElement("div"));
+div.innerHTML = marimo_html;
+div
+```
