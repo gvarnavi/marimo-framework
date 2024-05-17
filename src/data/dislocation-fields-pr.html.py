@@ -1,12 +1,8 @@
 import asyncio
 
-from bs4 import BeautifulSoup
-from marimo._server.export import run_app_then_export_as_reactive_html
-from marimo._utils.marimo_path import MarimoPath
+from marimo import MarimoIslandGenerator
 
-path = MarimoPath("src/data-files/dislocation-fields.py")
-html, _ = asyncio.run(run_app_then_export_as_reactive_html(path, include_code=False))
-
-soup = BeautifulSoup(html, features="html.parser")
-body = soup.body.decode_contents().strip()
+generator = MarimoIslandGenerator.from_file("src/data-files/dislocation-fields.py")
+app = asyncio.run(generator.build())
+body = generator.render_body()
 print(body)

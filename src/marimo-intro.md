@@ -25,10 +25,8 @@ theme: [air, alt,wide]
 />
 
 ```js
-const marimo_html = FileAttachment("data/marimo-intro-cli.html").text();
+const marimo_html = FileAttachment("data/marimo-intro-cli.html").html();
 ```
 ```js
-const div = display(document.createElement("div"));
-div.innerHTML = marimo_html;
-div
+marimo_html.body
 ```
