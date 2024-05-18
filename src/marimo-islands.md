@@ -29,7 +29,7 @@ import {showCode} from "./components/showCode.js";
 />
 
 ```js
-const marimo_html = FileAttachment("data/dislocation-fields-pr.html").html();
+const marimo_html = FileAttachment("data/dislocation-fields.html").html();
 ```
 
 ```js
