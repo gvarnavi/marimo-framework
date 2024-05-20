@@ -3,9 +3,9 @@ title: Marimo Islands
 toc: false
 theme: [air, alt,wide]
 head: 
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@marimo-team/islands@0.6.0/dist/main.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@marimo-team/islands@0.5.2/dist/main.js"></script>
   <link
-      href="https://cdn.jsdelivr.net/npm/@marimo-team/islands@0.6.0/dist/style.css"
+      href="https://cdn.jsdelivr.net/npm/@marimo-team/islands@0.5.2/dist/style.css"
       rel="stylesheet"
       crossorigin="anonymous"
   />
