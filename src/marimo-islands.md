@@ -63,7 +63,7 @@ ${marimo_code_div}
 
   </div>
   <div class="card">
-    <div id="marimo-island" style="max-width:740px; margin: 0 auto;"> ${marimo_html.body} </div>
+    <div id="marimo-island-container"> </div>
   </div>
 </div>
 
@@ -75,4 +75,9 @@ ${marimo_code_div}
 }
 
 </style>
+
+```js
+const div = document.getElementById('marimo-island-container');
+div.innerHTML = marimo_html.body.innerHTML;
+```
 
