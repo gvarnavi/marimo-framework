@@ -7,5 +7,6 @@ export default {
   pages: [
 	  {name:"Marimo Islands", path:"marimo-islands"},
 	  {name:"Intro Notebook", path:"marimo-intro"},
+	  {name:"Marimo Pyodide Bug", path:"marimo-pyodide-bug"},
   ]
 };
