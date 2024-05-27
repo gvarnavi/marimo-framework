@@ -24,6 +24,13 @@ theme: [air, alt,wide]
     crossorigin="anonymous"
 />
 
+```js
+const marimo_html = FileAttachment("data/marimo-pyodide-islands-bug.html").html();
+```
+```js
+const div = document.getElementById("marimo-island");
+div.innerHTML = marimo_html.body.innerHTML;
+```
 # Marimo Pyodide Bug
 
 Currently, the MarimoIslandGenerator tries to build the app before producing the rendered HTML stubs. This has a number of consequences:
@@ -41,12 +48,7 @@ import cowsay
 cowsay.get_output_string('cow', 'Hello, Marimo!')
 ```
 
-```js
-const marimo_html = FileAttachment("data/marimo-pyodide-islands-bug.html").html();
-```
-```js
-marimo_html.body
-```
+<div style="max-width:960px;" id="marimo-island"></div>
 
 - If the marimo app during export is successful, the HTML output will include all outputs
   - This can be nice, since you get a static view of the app until pyodide initializes
