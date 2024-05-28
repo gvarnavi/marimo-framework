@@ -1,12 +1,12 @@
 ---
 title: Pyodide Back
 toc: false
-theme: [air, alt,wide]
+theme: [air, alt, wide]
 ---
-  
-<script type="module" src="https://cdn.jsdelivr.net/npm/@marimo-team/islands@0.5.2/dist/main.js"></script>
+
+<script type="module" src="https://cdn.jsdelivr.net/npm/@marimo-team/islands@0.6.2/dist/main.js"></script>
 <link
-    href="https://cdn.jsdelivr.net/npm/@marimo-team/islands@0.5.2/dist/style.css"
+    href="https://cdn.jsdelivr.net/npm/@marimo-team/islands@0.6.2/dist/style.css"
     rel="stylesheet"
     crossorigin="anonymous"
 />
@@ -25,16 +25,22 @@ theme: [air, alt,wide]
 />
 
 ```js
-const marimo_html = FileAttachment("data/marimo-pyodide-islands-bug.html").html();
+const marimo_html = FileAttachment(
+  "data/marimo-pyodide-islands-bug.html",
+).html();
 ```
+
 ```js
 const div = document.getElementById("marimo-island");
 div.innerHTML = marimo_html.body.innerHTML;
 ```
+
 # Marimo Pyodide Bug
 
 Currently, the MarimoIslandGenerator tries to build the app before producing the rendered HTML stubs. This has a number of consequences:
+
 - A marimo island like the one below, which tries to import a package with micropip that is not locally-installed will pre-render with errors until pyodide gets initialized
+
 ```python
 # imports
 import marimo as mo
@@ -42,7 +48,7 @@ import sys
 
 if "pyodide" in sys.modules:
   import micropip
-  await micropip.install('cowsay') 
+  await micropip.install('cowsay')
 
 import cowsay
 cowsay.get_output_string('cow', 'Hello, Marimo!')
@@ -51,6 +57,7 @@ cowsay.get_output_string('cow', 'Hello, Marimo!')
 <div style="max-width:960px;" id="marimo-island"></div>
 
 - If the marimo app during export is successful, the HTML output will include all outputs
+
   - This can be nice, since you get a static view of the app until pyodide initializes
   - Is slightly inconsisent with the rest of marimo (which does not store outputs, and instead only saves the necessary .py files)
 

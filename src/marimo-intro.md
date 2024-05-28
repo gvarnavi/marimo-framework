@@ -1,12 +1,12 @@
 ---
 title: Intro Notebook
 toc: false
-theme: [air, alt,wide]
+theme: [air, alt, wide]
 ---
-  
-<script type="module" src="https://cdn.jsdelivr.net/npm/@marimo-team/islands@0.5.2/dist/main.js"></script>
+
+<script type="module" src="https://cdn.jsdelivr.net/npm/@marimo-team/islands@0.6.2/dist/main.js"></script>
 <link
-    href="https://cdn.jsdelivr.net/npm/@marimo-team/islands@0.5.2/dist/style.css"
+    href="https://cdn.jsdelivr.net/npm/@marimo-team/islands@0.6.2/dist/style.css"
     rel="stylesheet"
     crossorigin="anonymous"
 />
@@ -27,6 +27,7 @@ theme: [air, alt,wide]
 ```js
 const marimo_html = FileAttachment("data/intro-notebook.html").html();
 ```
+
 ```js
-marimo_html.body
+display(marimo_html.body);
 ```

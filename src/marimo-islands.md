@@ -1,11 +1,12 @@
 ---
 title: Marimo Islands
 toc: false
-theme: [air, alt,wide]
+theme: [air, alt, wide]
 ---
-<script type="module" src="https://cdn.jsdelivr.net/npm/@marimo-team/islands@0.5.2/dist/main.js"></script>
+
+<script type="module" src="https://cdn.jsdelivr.net/npm/@marimo-team/islands@0.6.2/dist/main.js"></script>
 <link
-    href="https://cdn.jsdelivr.net/npm/@marimo-team/islands@0.5.2/dist/style.css"
+    href="https://cdn.jsdelivr.net/npm/@marimo-team/islands@0.6.2/dist/style.css"
     rel="stylesheet"
     crossorigin="anonymous"
 />
@@ -21,10 +22,10 @@ theme: [air, alt,wide]
     href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css"
     integrity="sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww"
     crossorigin="anonymous"
-/>  
+/>
 
 ```js
-import {showCode} from "./components/showCode.js";
+import { showCode } from "./components/showCode.js";
 ```
 
 ```js
@@ -32,11 +33,14 @@ const marimo_html = FileAttachment("data/dislocation-fields.html").html();
 ```
 
 ```js
-let marimo_code_div = showCode(FileAttachment("data-files/dislocation-fields.py"),{open:false});
+let marimo_code_div = showCode(
+  FileAttachment("data-files/dislocation-fields.py"),
+  { open: false },
+);
 ```
 
 <div class="grid grid-cols-2" style="grid-auto-rows: auto;">
-  <div class="card"> 
+  <div class="card">
 
 # Reactive Python Notebook
 
@@ -66,7 +70,6 @@ ${marimo_code_div}
   </div>
 </div>
 
-
 <style type="text/css">
 
   #marimo-island img {
@@ -74,5 +77,3 @@ ${marimo_code_div}
 }
 
 </style>
-
-

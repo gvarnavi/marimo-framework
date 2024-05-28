@@ -1,6 +1,13 @@
 import hljs from "https://cdn.jsdelivr.net/npm/highlight.js/+esm";
 
-export function showCode(file, {language = file.name.match(/\.(\w+)$/)?.[1], copy = true, open = true} = {}) {
+export function showCode(
+  file,
+  {
+    language = file.name.match(/\.(\w+)$/)?.[1],
+    copy = true,
+    open = true,
+  } = {},
+) {
   const div = document.createElement("details");
   if (open) div.setAttribute("open", "open");
   div.innerHTML = `
@@ -10,7 +17,7 @@ export function showCode(file, {language = file.name.match(/\.(\w+)$/)?.[1], cop
     </div>`;
   file.text().then((code) => {
     const pre = div.querySelector("pre");
-    pre.innerHTML = hljs.highlight(code, {language}).value;
+    pre.innerHTML = hljs.highlight(code, { language }).value;
     if (copy) enableCopyButton(pre);
   });
   return div;
@@ -23,10 +30,14 @@ function enableCopyButton(pre) {
   const parent = pre.parentElement;
   const div = parent.insertBefore(document.createElement("div"), pre);
   Object.assign(div.dataset, pre.dataset);
-  div.appendChild(copyButton.content.cloneNode(true).firstChild).addEventListener("click", copy);
+  div
+    .appendChild(copyButton.content.cloneNode(true).firstChild)
+    .addEventListener("click", copy);
   div.appendChild(pre);
 }
 
-async function copy({currentTarget}) {
-  await navigator.clipboard.writeText(currentTarget.parentElement.textContent.trimEnd());
+async function copy({ currentTarget }) {
+  await navigator.clipboard.writeText(
+    currentTarget.parentElement.textContent.trimEnd(),
+  );
 }

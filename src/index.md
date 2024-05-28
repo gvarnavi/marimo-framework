@@ -47,4 +47,3 @@ toc: false
 <div class="hero">
   <h1>Hello, Observable Framework & Marimo Islands!</h1>
 </div>
-
